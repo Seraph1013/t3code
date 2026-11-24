@@ -1,5 +1,11 @@
 # Product usage data
 
+> **This fork:** product events (`ingest.t3.codes` → PostHog) and relay tracing (Axiom) are
+> **off unless `T3CODE_TELEMETRY_ENABLED=true`** is set in the server's environment. While they
+> are off, the server does not read `~/.codex/auth.json` or `~/.claude.json` for telemetry
+> identity and does not create an install ID. The text below describes upstream's default-on
+> behavior. Mobile app crash reports and **Publish agent activity** are unchanged.
+
 The T3 Code server sends product usage events to T3 Code's own endpoint at `ingest.t3.codes`,
 associated with a hashed account or installation identifier. To count how many installations one person
 uses, the server also sends hashed account identifiers: your T3 Connect account, your OpenAI and
